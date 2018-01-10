@@ -23,7 +23,7 @@ And(/^I check the total number of Labels in the table$/) do
   $browser.tags(id: /'lbl_val_'/).each do |tag|
     # capture the tag element.
     # I'm expecting this to be 'lbl_val_1' but without proper debug tools, I can tell.
-    tag_attr = tag.attribute 'id'
+    tag_attr = tag.attribute_value 'id'
     # I'm expecting this to be 'Value 1'
     tag_text = tag.text
 
@@ -40,8 +40,8 @@ And(/^I check the total number of Values in the table$/) do
   $txt_val_pairs = []
   $browser.tags(id: /'txt_val_'/).each do |tag|
     # capture the tag element.
-    # I'm expecting this to be 'txt_val_1' but without proper debug tools, I can tell.
-    tag_attr = tag.attribute 'id'
+    # I'm expecting this to be 'txt_val_1' but without proper debug tools, I can't tell.
+    tag_attr = tag.attribute_value 'id'
     # I'm expecting this to be '$122,365.24'
     tag_text = tag.text
 
@@ -214,7 +214,7 @@ Then(/^I should find that they are all currencies/) do
 
   # If you didn't feel the need to fail any rows, Pass the test.
   unless should_fail
-    $TestResults.push('fail')
+    $TestResults.push('pass')
   end
 end
 

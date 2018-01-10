@@ -8,7 +8,7 @@ $browser.window.resize_to(1920,1080) # For Chrome
 $TestResults = []
 
 # This part I am not as sure about.
-# I'm have some room to grow in build up and tear down type stuff
+# I have some room to grow in build up and tear down type processes
 at_exit do
 passed = 0
 failed = 0
